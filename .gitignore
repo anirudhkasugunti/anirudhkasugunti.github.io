@@ -1,0 +1,16 @@
+# Publish only site/ — everything else here is internal working material
+/assets/
+/design/
+/content-layout-spec.md
+/SESSION-HANDOFF.md
+/DEPLOYMENT-HANDOFF.md
+
+# Local asset backup created during the polish pass — never publish
+/_asset-backup/
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/

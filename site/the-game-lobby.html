@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Game Lobby — Anirudh Kasugunti</title>
+<meta name="description" content="The Game Lobby — a browser-based multi-game hub with guest play, live multiplayer, and a leaderboard that carries across every game. Built end-to-end by Anirudh Kasugunti.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="icon" href="assets/img/favicon/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/img/favicon/favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="assets/img/favicon/apple-touch-icon.png">
+<link rel="manifest" href="assets/img/favicon/site.webmanifest">
+<meta name="theme-color" content="#FF6B4A">
+<link rel="canonical" href="https://anirudhkasugunti.github.io/the-game-lobby.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Anirudh Kasugunti">
+<meta property="og:title" content="The Game Lobby — Anirudh Kasugunti">
+<meta property="og:description" content="The Game Lobby — a browser-based multi-game hub with guest play, live multiplayer, and a leaderboard that carries across every game. Built end-to-end by Anirudh Kasugunti.">
+<meta property="og:url" content="https://anirudhkasugunti.github.io/the-game-lobby.html">
+<meta property="og:image" content="https://anirudhkasugunti.github.io/assets/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="container">
+    <a href="index.html" class="nav-logo">Anirudh <span>Kasugunti</span></a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+    </button>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="work.html">Work</a>
+      <a href="projects.html" class="active">Projects</a>
+      <a href="about.html">About</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ PROJECT HERO ============ -->
+<header class="project-hero">
+  <div class="container">
+    <div class="back-link-row"><a href="projects.html" class="back-link">← Back to Projects</a></div>
+    <span class="badge badge-live">Live</span>
+    <h1>The Game Lobby</h1>
+    <p class="tagline">One hub, a growing shelf of quick games, and a leaderboard that remembers who's actually good.</p>
+    <div class="hero-ctas">
+      <a href="https://game-lobby-phi.vercel.app/" target="_blank" rel="noopener" class="btn btn-primary">Try it →</a>
+    </div>
+    <div class="project-meta-row">
+      <span class="tag">Next.js</span>
+      <span class="tag">Neon Postgres</span>
+      <span class="tag">Ably</span>
+      <span class="tag">Auth.js + Google OAuth</span>
+      <span class="tag">Vercel</span>
+    </div>
+  </div>
+</header>
+
+<!-- ============ THE IDEA ============ -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-header" style="max-width: 720px;">
+      <span class="section-eyebrow">The Idea</span>
+      <h2 class="section-title">One hub, a growing catalog of games, and a leaderboard that carries across all of them.</h2>
+      <p class="section-desc" style="font-size: 16.5px;">Land on the hub, pick a game, and play solo or spin up a lobby and share a link with friends — no downloads, no account required to get started. Every result lands on a shared profile and leaderboard that carries across every game, so beating a friend at Tic-Tac-Toe today and topping the 2048 board tomorrow become part of the same story. Guest play works end to end; only the leaderboard and profile ask you to sign in.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HIGHLIGHTS ============ -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">Highlights</span>
+      <h2 class="section-title">What actually makes it work</h2>
+    </div>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="feature-card-head">
+          <span class="feature-emoji">🔓</span>
+          <h4>Play now, sign in later</h4>
+        </div>
+        <p>Solo play and full live multiplayer — hosting included — work with zero account. Logging in mid-match transparently upgrades your session without losing your seat.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card-head">
+          <span class="feature-emoji">🧩</span>
+          <h4>One contract, three shapes of multiplayer</h4>
+        </div>
+        <p>A single plugin interface handles solo (2048), live 1v1 (Tic-Tac-Toe), and host-plus-many (Trivia) — proving the architecture holds before adding rules-heavy games like Chess.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card-head">
+          <span class="feature-emoji">📶</span>
+          <h4>Built to survive a bad connection</h4>
+        </div>
+        <p>Every move is re-validated server-side, never trusted from the client — a dropped connection gets a two-minute grace period to reconnect before it counts as a forfeit.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WALKTHROUGH 01 ============ -->
+<section class="section section-alt">
+  <div class="container">
+
+    <div class="walkthrough-stage">
+      <div class="walkthrough-head">
+        <span class="wt-num">Walkthrough · 01</span>
+        <h3>Picking a game</h3>
+        <p>From the catalog to a shared lobby link — everything that happens before the first move.</p>
+      </div>
+      <div class="wt-steps">
+        <div class="wt-step">
+          <div class="wt-step-media is-portrait"><picture><source srcset="assets/img/game-lobby/screenshot-01.webp" type="image/webp"><img src="assets/img/game-lobby/screenshot-01.jpg" alt="Game catalog" width="780" height="1688" loading="lazy" decoding="async"></picture></div>
+          <div class="wt-step-body">
+            <h4>Catalog</h4>
+            <p>Every game — genre, mode, a one-line hook. No login needed.</p>
+          </div>
+        </div>
+        <div class="wt-step">
+          <div class="wt-step-media is-portrait"><picture><source srcset="assets/img/game-lobby/screenshot-02.webp" type="image/webp"><img src="assets/img/game-lobby/screenshot-02.jpg" alt="Game info screen" width="780" height="1688" loading="lazy" decoding="async"></picture></div>
+          <div class="wt-step-body">
+            <h4>Game info</h4>
+            <p>Rules up front, then Create Lobby or join with a code.</p>
+          </div>
+        </div>
+        <div class="wt-step">
+          <div class="wt-step-media is-portrait"><picture><source srcset="assets/img/game-lobby/screenshot-03.webp" type="image/webp"><img src="assets/img/game-lobby/screenshot-03.jpg" alt="Lobby screen with invite link and players" width="780" height="1688" loading="lazy" decoding="async"></picture></div>
+          <div class="wt-step-body">
+            <h4>Lobby</h4>
+            <p>Share a link or code — the host starts once friends join.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ WALKTHROUGH 02 ============ -->
+    <div class="walkthrough-stage">
+      <div class="walkthrough-head">
+        <span class="wt-num">Walkthrough · 02</span>
+        <h3>Game night</h3>
+        <p>Three very different games sharing one shell — solo, live 1v1, and host-plus-many.</p>
+      </div>
+      <div class="wt-steps">
+        <div class="wt-step">
+          <div class="wt-step-media is-portrait"><picture><source srcset="assets/img/game-lobby/screenshot-04.webp" type="image/webp"><img src="assets/img/game-lobby/screenshot-04.jpg" alt="2048 solo gameplay" width="780" height="1688" loading="lazy" decoding="async"></picture></div>
+          <div class="wt-step-body">
+            <h4>2048 · solo</h4>
+            <p>Slide-and-merge, saved locally — a refresh won't cost you.</p>
+          </div>
+        </div>
+        <div class="wt-step">
+          <div class="wt-step-media is-portrait"><picture><source srcset="assets/img/game-lobby/screenshot-05.webp" type="image/webp"><img src="assets/img/game-lobby/screenshot-05.jpg" alt="Tic-Tac-Toe live 1v1 gameplay" width="780" height="1688" loading="lazy" decoding="async"></picture></div>
+          <div class="wt-step-body">
+            <h4>Tic-Tac-Toe · live 1v1</h4>
+            <p>A turn timer keeps it moving — miss it and your turn is skipped.</p>
+          </div>
+        </div>
+        <div class="wt-step">
+          <div class="wt-step-media is-portrait"><picture><source srcset="assets/img/game-lobby/screenshot-06.webp" type="image/webp"><img src="assets/img/game-lobby/screenshot-06.jpg" alt="Trivia gameplay with multiple players" width="780" height="1688" loading="lazy" decoding="async"></picture></div>
+          <div class="wt-step-body">
+            <h4>Trivia · host + up to 10</h4>
+            <p>Everyone answers live, against the clock, together.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ WALKTHROUGH 03 ============ -->
+    <div class="walkthrough-stage">
+      <div class="walkthrough-head">
+        <span class="wt-num">Walkthrough · 03</span>
+        <h3>After the match</h3>
+        <p>Results, leaderboard, and profile — every match feeds the same running record.</p>
+      </div>
+      <div class="wt-steps">
+        <div class="wt-step">
+          <div class="wt-step-media is-portrait"><picture><source srcset="assets/img/game-lobby/screenshot-07.webp" type="image/webp"><img src="assets/img/game-lobby/screenshot-07.jpg" alt="Match results screen" width="780" height="1688" loading="lazy" decoding="async"></picture></div>
+          <div class="wt-step-body">
+            <h4>Results</h4>
+            <p>Win or lose, everyone sees it — Replay re-hosts instantly.</p>
+          </div>
+        </div>
+        <div class="wt-step">
+          <div class="wt-step-media is-portrait"><picture><source srcset="assets/img/game-lobby/screenshot-08.webp" type="image/webp"><img src="assets/img/game-lobby/screenshot-08.jpg" alt="Leaderboard screen" width="736" height="1593" loading="lazy" decoding="async"></picture></div>
+          <div class="wt-step-body">
+            <h4>Leaderboard</h4>
+            <p>7-day activity, plus a separate board for each game.</p>
+          </div>
+        </div>
+        <div class="wt-step">
+          <div class="wt-step-media is-portrait"><picture><source srcset="assets/img/game-lobby/screenshot-09.webp" type="image/webp"><img src="assets/img/game-lobby/screenshot-09.jpg" alt="Player profile screen" width="736" height="1593" loading="lazy" decoding="async"></picture></div>
+          <div class="wt-step-body">
+            <h4>Profile</h4>
+            <p>Stats and match history across every game, in one place.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ UNDER THE HOOD ============ -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">Under the Hood</span>
+      <h2 class="section-title">One backend, flexible enough for solo, live, and host-plus-many.</h2>
+    </div>
+    <div class="stack-row">
+      <span class="tag">Next.js</span>
+      <span class="tag">Neon Postgres</span>
+      <span class="tag">Ably (real-time sync)</span>
+      <span class="tag">Auth.js + Google OAuth</span>
+      <span class="tag">Vercel</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHAT'S NEXT ============ -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-header" style="max-width: 720px;">
+      <span class="section-eyebrow">What's Next</span>
+      <h2 class="section-title">Three games prove the pattern. More are next.</h2>
+      <p class="section-desc" style="font-size: 16.5px;">Public matchmaking and a blended cross-game score are deliberately out of scope — every multiplayer match stays friends-only, by design.</p>
+    </div>
+    <div class="roadmap-row">
+      <span class="roadmap-chip">🎮 More games to come</span>
+      <span class="roadmap-chip">🤖 Play against AI</span>
+      <span class="roadmap-chip">🌐 Online async multiplayer</span>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container footer-row">
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/in/anirudh-kasugunti-9b7a97155/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://wa.me/919030330744" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="mailto:anirudh.kasugunti@gmail.com">Email</a>
+    </div>
+    <div class="footer-copyright">Bengaluru, India &middot; &copy; 2026 Anirudh Kasugunti</div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

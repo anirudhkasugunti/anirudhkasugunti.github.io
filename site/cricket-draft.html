@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cricket Draft — Anirudh Kasugunti</title>
+<meta name="description" content="Cricket Fantasy Draft — a private, live multiplayer snake-draft app for group chats. Solo-built from PRD to product by Anirudh Kasugunti.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="icon" href="assets/img/favicon/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/img/favicon/favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="assets/img/favicon/apple-touch-icon.png">
+<link rel="manifest" href="assets/img/favicon/site.webmanifest">
+<meta name="theme-color" content="#FF6B4A">
+<link rel="canonical" href="https://anirudhkasugunti.github.io/cricket-draft.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Anirudh Kasugunti">
+<meta property="og:title" content="Cricket Draft — Anirudh Kasugunti">
+<meta property="og:description" content="Cricket Fantasy Draft — a private, live multiplayer snake-draft app for group chats. Solo-built from PRD to product by Anirudh Kasugunti.">
+<meta property="og:url" content="https://anirudhkasugunti.github.io/cricket-draft.html">
+<meta property="og:image" content="https://anirudhkasugunti.github.io/assets/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="container">
+    <a href="index.html" class="nav-logo">Anirudh <span>Kasugunti</span></a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+    </button>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="work.html">Work</a>
+      <a href="projects.html" class="active">Projects</a>
+      <a href="about.html">About</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ PROJECT HERO ============ -->
+<header class="project-hero">
+  <div class="container">
+    <div class="back-link-row"><a href="projects.html" class="back-link">← Back to Projects</a></div>
+    <span class="badge badge-prototype">v1 · Solo-built · PRD to product</span>
+    <h1>Cricket Fantasy Draft</h1>
+    <p class="tagline">Draft night, for your group chat. A private web app that turns a cricket group chat into one live, unforgettable draft night — and gives everyone a squad to obsess over for the whole tournament that follows.</p>
+    <div class="hero-ctas">
+      <span class="btn btn-secondary" style="cursor:default;">Designed &amp; built end-to-end by Anirudh — product, architecture, and code</span>
+    </div>
+    <div class="project-meta-row">
+      <span class="tag">Next.js</span>
+      <span class="tag">Neon Postgres + Drizzle</span>
+      <span class="tag">Ably</span>
+      <span class="tag">Auth.js + Google OAuth</span>
+      <span class="tag">Vercel</span>
+    </div>
+  </div>
+</header>
+
+<!-- ============ THE IDEA ============ -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-header" style="max-width: 720px;">
+      <span class="section-eyebrow">The Idea</span>
+      <h2 class="section-title">One night on the clock. A whole tournament to watch after.</h2>
+      <p class="section-desc" style="font-size: 16.5px;">A friend creates a private league for the tournament and drops the invite in the group chat. Once everyone's in, the room runs a live, turn-based snake draft together — every pick exclusive, every squad locked in for the season, so by the time the first ball is bowled, everyone's already got a team to root for and a friend to trash-talk.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HIGHLIGHTS ============ -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">Highlights</span>
+      <h2 class="section-title">What actually makes draft night work</h2>
+    </div>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="feature-card-head">
+          <span class="feature-emoji">🏏</span>
+          <h4>Real, live snake draft</h4>
+        </div>
+        <p>Turn-based, round-reversing order with a per-pick timer and instant turn advancement — picks are final, no undos.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card-head">
+          <span class="feature-emoji">🛡️</span>
+          <h4>Three-tier missed-pick escalation</h4>
+        </div>
+        <p>Miss your turn → makeup shot → catch-up phase → auto-pick. One absent friend can never freeze the room.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card-head">
+          <span class="feature-emoji">⏸️</span>
+          <h4>Commissioner controls</h4>
+        </div>
+        <p>Lock the lobby, re-randomize the draft order, pause and resume mid-draft — all without leaving the flow.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WALKTHROUGH 01 ============ -->
+<section class="section section-alt">
+  <div class="container">
+
+    <div class="walkthrough-stage">
+      <div class="walkthrough-head">
+        <span class="wt-num">Walkthrough · 01</span>
+        <h3>Setting the stage</h3>
+        <p>From sign-in to a locked lobby with a revealed draft order — everything that happens before the clock starts.</p>
+      </div>
+      <div class="wt-steps">
+        <div class="wt-step">
+          <div class="wt-step-media"><picture><source srcset="assets/img/cricket-draft/screenshot-01.webp" type="image/webp"><img src="assets/img/cricket-draft/screenshot-01.jpg" alt="Sign in with Google" width="2152" height="754" loading="lazy" decoding="async"></picture></div>
+          <div class="wt-step-body">
+            <h4>Sign in</h4>
+            <p>One click with Google — no passwords, no email infra.</p>
+          </div>
+        </div>
+        <div class="wt-step">
+          <div class="wt-step-media"><picture><source srcset="assets/img/cricket-draft/screenshot-02.webp" type="image/webp"><img src="assets/img/cricket-draft/screenshot-02.jpg" alt="Lobby fills up with members" width="1060" height="952" loading="lazy" decoding="async"></picture></div>
+          <div class="wt-step-body">
+            <h4>Lobby fills up</h4>
+            <p>Friends join live by link — the Commissioner locks it whenever ready.</p>
+          </div>
+        </div>
+        <div class="wt-step">
+          <div class="wt-step-media"><picture><source srcset="assets/img/cricket-draft/screenshot-03.webp" type="image/webp"><img src="assets/img/cricket-draft/screenshot-03.jpg" alt="Draft order reveal" width="2152" height="784" loading="lazy" decoding="async"></picture></div>
+          <div class="wt-step-body">
+            <h4>Order reveal</h4>
+            <p>Draft order shuffles live, with up to three re-randomizes.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ WALKTHROUGH 02 ============ -->
+    <div class="walkthrough-stage">
+      <div class="walkthrough-head">
+        <span class="wt-num">Walkthrough · 02</span>
+        <h3>Draft night</h3>
+        <p>The live draft room — the highest-stakes surface in the app, built to keep moving no matter what.</p>
+      </div>
+      <div class="wt-steps">
+        <div class="wt-step">
+          <div class="wt-step-media"><picture><source srcset="assets/img/cricket-draft/screenshot-04.webp" type="image/webp"><img src="assets/img/cricket-draft/screenshot-04.jpg" alt="On the clock — player pool and pick timer" width="2152" height="1192" loading="lazy" decoding="async"></picture></div>
+          <div class="wt-step-body">
+            <h4>On the clock</h4>
+            <p>Searchable player pool, live countdown, one-tap pick — no undos.</p>
+          </div>
+        </div>
+        <div class="wt-step">
+          <div class="wt-step-media"><picture><source srcset="assets/img/cricket-draft/screenshot-05.webp" type="image/webp"><img src="assets/img/cricket-draft/screenshot-05.jpg" alt="Missed turn requeue" width="2152" height="1296" loading="lazy" decoding="async"></picture></div>
+          <div class="wt-step-body">
+            <h4>Miss a turn</h4>
+            <p>Requeued to the end of the round — one no-penalty makeup shot.</p>
+          </div>
+        </div>
+        <div class="wt-step">
+          <div class="wt-step-media"><picture><source srcset="assets/img/cricket-draft/screenshot-06.webp" type="image/webp"><img src="assets/img/cricket-draft/screenshot-06.jpg" alt="Commissioner pause on connection drop" width="2152" height="836" loading="lazy" decoding="async"></picture></div>
+          <div class="wt-step-body">
+            <h4>Connection drops</h4>
+            <p>Commissioner pauses anytime — resumes whenever everyone's back.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ WALKTHROUGH 03 ============ -->
+    <div class="walkthrough-stage">
+      <div class="walkthrough-head">
+        <span class="wt-num">Walkthrough · 03</span>
+        <h3>After the whistle — and behind the scenes</h3>
+        <p>Final squads, locked in — every league's permanent record for the season.</p>
+      </div>
+      <div class="wt-steps">
+        <div class="wt-step">
+          <div class="wt-step-media"><picture><source srcset="assets/img/cricket-draft/screenshot-07.webp" type="image/webp"><img src="assets/img/cricket-draft/screenshot-07.jpg" alt="League wrapped home screen" width="2152" height="768" loading="lazy" decoding="async"></picture></div>
+          <div class="wt-step-body">
+            <h4>League, wrapped</h4>
+            <p>Every roster full — the league's home screen once the season's squads are locked in.</p>
+          </div>
+        </div>
+        <div class="wt-step">
+          <div class="wt-step-media"><picture><source srcset="assets/img/cricket-draft/screenshot-08.webp" type="image/webp"><img src="assets/img/cricket-draft/screenshot-08.jpg" alt="Your squad stat line" width="2152" height="1240" loading="lazy" decoding="async"></picture></div>
+          <div class="wt-step-body">
+            <h4>Your squad</h4>
+            <p>A permanent, bragging-rights record with a full stat line.</p>
+          </div>
+        </div>
+        <div class="wt-step">
+          <div class="wt-step-media"><picture><source srcset="assets/img/cricket-draft/screenshot-09.webp" type="image/webp"><img src="assets/img/cricket-draft/screenshot-09.jpg" alt="Everyone's squad visible" width="2152" height="1240" loading="lazy" decoding="async"></picture></div>
+          <div class="wt-step-body">
+            <h4>Everyone's squad</h4>
+            <p>Every roster is visible once the draft wraps.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ UNDER THE HOOD ============ -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">Under the Hood</span>
+      <h2 class="section-title">Built for real-time, on a stack sized to the problem</h2>
+    </div>
+    <div class="stack-row">
+      <span class="tag">Next.js</span>
+      <span class="tag">Neon Postgres + Drizzle</span>
+      <span class="tag">Ably (real-time sync)</span>
+      <span class="tag">Auth.js + Google OAuth</span>
+      <span class="tag">Vercel</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHAT'S NEXT ============ -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">What's Next</span>
+      <h2 class="section-title">Squad formation is v1. The season is v2.</h2>
+    </div>
+    <div class="roadmap-row">
+      <span class="roadmap-chip">🔁 Trade window</span>
+      <span class="roadmap-chip">📊 Live scoring engine</span>
+      <span class="roadmap-chip">📡 Live match data feed</span>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container footer-row">
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/in/anirudh-kasugunti-9b7a97155/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://wa.me/919030330744" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="mailto:anirudh.kasugunti@gmail.com">Email</a>
+    </div>
+    <div class="footer-copyright">Bengaluru, India &middot; &copy; 2026 Anirudh Kasugunti</div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

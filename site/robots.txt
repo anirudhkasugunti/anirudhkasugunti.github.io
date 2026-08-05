@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://anirudhkasugunti.github.io/sitemap.xml

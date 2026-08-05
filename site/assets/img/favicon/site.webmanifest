@@ -1,0 +1,14 @@
+{
+  "name": "Anirudh Kasugunti",
+  "short_name": "Anirudh K",
+  "description": "Senior Product Manager who builds 0→1 systems that help businesses grow.",
+  "icons": [
+    { "src": "favicon-32.png", "type": "image/png", "sizes": "32x32" },
+    { "src": "icon-192.png", "type": "image/png", "sizes": "192x192" },
+    { "src": "icon-512.png", "type": "image/png", "sizes": "512x512" }
+  ],
+  "theme_color": "#FF6B4A",
+  "background_color": "#FFFDF7",
+  "display": "standalone",
+  "start_url": "/"
+}
