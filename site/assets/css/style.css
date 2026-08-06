@@ -614,6 +614,12 @@ p { margin: 0; }
   border-radius: 6px;
 }
 .card-thumb.is-portrait img { max-width: 62%; }
+/* The WebP <picture> wrapper must not become the flex item — otherwise the
+   inner <img> aligns to the wrapper's left edge (and its max-height resolves
+   against the wrapper, so tall shots overflow). display:contents drops the
+   wrapper's box so the <img> is the direct flex child and the centering +
+   max-width/height rules above apply as intended. */
+.card-thumb picture, .wt-step-media picture { display: contents; }
 .card h3 { font-size: 18px; }
 .card p { color: var(--text-muted); font-size: 14.5px; }
 .card-tags { display: flex; flex-wrap: wrap; gap: 6px; }
