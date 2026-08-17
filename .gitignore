@@ -8,6 +8,12 @@
 # Local asset backup created during the polish pass — never publish
 /_asset-backup/
 
+# Local résumé-update helper (references a private source path; not for the public repo)
+/update-resume.ps1
+
+# Impeccable critique snapshots — internal design notes, keep local
+/.impeccable/
+
 # OS / editor noise
 .DS_Store
 Thumbs.db

@@ -1,7 +1,8 @@
 /* ============================================================
    Anirudh Kasugunti — Personal Site
-   Design system: warm cream base, deep forest-green accent
-   (matches the Cricket Draft product's own brand color)
+   Design system: "Citrus Fresh" — warm cream base, coral accent.
+   Text-bearing colors are tuned to meet WCAG AA (>=4.5:1); the
+   bright coral --accent is reserved for fills and decoration.
    ============================================================ */
 
 :root {
@@ -12,17 +13,18 @@
   --bg-stripe: #f5e4cc;
   --text: #241f1a;
   --text-muted: #6b5d4f;
-  --text-faint: #978a79;
+  --text-faint: #7a6e5d;
   --border: #f1e4d2;
   --border-strong: #e3d3bc;
-  --accent: #ff6b4a;
-  --accent-dark: #d8501f;
+  --accent: #ff6b4a;          /* bright coral — fills & decoration only (not text) */
+  --accent-press: #f65c3b;    /* primary-button hover, keeps dark text >=4.5:1 */
+  --accent-dark: #ba4419;     /* coral as text: links, eyebrows, CTAs (AA on cream/card/soft) */
   --accent-soft: #ffe8dd;
   --accent-soft-border: #ffcdb8;
   --highlight: #ffc93c;
-  --live: #1f8a4c;
+  --live: #17703c;
   --live-soft: #e1f5e8;
-  --prototype: #a6740c;
+  --prototype: #835a08;
   --prototype-soft: #fff1ce;
 
   --radius-sm: 8px;
@@ -36,7 +38,18 @@
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: auto; }
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+
+/* Branded keyboard focus — visible on the warm palette, off for mouse users */
+:focus-visible {
+  outline: 2px solid var(--accent-dark);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+:focus:not(:focus-visible) { outline: none; }
 
 body {
   margin: 0;
@@ -83,7 +96,7 @@ p { margin: 0; }
   font-size: 17px;
   letter-spacing: -0.01em;
 }
-.nav-logo span { color: var(--accent); }
+.nav-logo span { color: var(--accent-dark); }
 .nav-links {
   display: flex;
   gap: 8px;
@@ -105,8 +118,8 @@ p { margin: 0; }
   justify-content: center;
   align-items: center;
   gap: 5px;
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   background: none;
   border: 1px solid var(--border-strong);
   border-radius: 10px;
@@ -158,8 +171,8 @@ p { margin: 0; }
   cursor: pointer;
   transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease;
 }
-.btn-primary { background: var(--accent); color: #fff; }
-.btn-primary:hover { background: var(--accent-dark); transform: translateY(-1px); }
+.btn-primary { background: var(--accent); color: var(--text); }
+.btn-primary:hover { background: var(--accent-press); transform: translateY(-1px); box-shadow: var(--shadow-card-hover); }
 .btn-secondary { background: transparent; border-color: var(--border-strong); color: var(--text); }
 .btn-secondary:hover { border-color: var(--accent); color: var(--accent-dark); transform: translateY(-1px); }
 .btn-sm { padding: 9px 16px; font-size: 13.5px; }
@@ -215,7 +228,7 @@ p { margin: 0; }
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--accent-dark);
   margin-bottom: 10px;
 }
 .section-title { font-size: 30px; margin-bottom: 10px; }
@@ -361,7 +374,7 @@ p { margin: 0; }
   display: flex;
   align-items: center;
   gap: 10px;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
 }
 .hero-links-btn { white-space: nowrap; flex-shrink: 0; height: var(--row-h); }
 
@@ -373,7 +386,7 @@ p { margin: 0; }
   width: calc(var(--row-h) - 14px);
   height: calc(var(--row-h) - 14px);
 }
-.hero-links .project-icon-chip { width: var(--row-h); height: var(--row-h); }
+.hero-links .quest-chip-icon { width: var(--row-h); height: var(--row-h); }
 
 @media (min-width: 901px) {
   .hero-links { column-gap: 20px; row-gap: 16px; }
@@ -442,7 +455,17 @@ p { margin: 0; }
 
 .hero-projects { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-top: 18px; }
 .hero-projects .logos-label { font-size: 12.5px; color: var(--text-faint); font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; }
-.project-icon-chip {
+/* Side-quest chips: a project icon with a persistent, always-visible caption
+   (replaces the old desktop-only hover tooltip so the names are readable on
+   touch and to keyboard users). */
+.quest-chip {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  text-align: center;
+}
+.quest-chip-icon {
   width: 54px;
   height: 54px;
   border-radius: 12px;
@@ -450,64 +473,11 @@ p { margin: 0; }
   border: 1px solid var(--border);
   background: var(--bg-card);
   transition: transform 0.15s ease, box-shadow 0.15s ease;
+  flex-shrink: 0;
 }
-.project-icon-chip:hover { transform: translateY(-2px); box-shadow: var(--shadow-card); }
-.project-icon-chip img { width: 100%; height: 100%; object-fit: cover; display: block; }
-
-/* Project-logo tooltips (desktop only): a small rounded bubble with the
-   project name on hover, built from the anchor's data-tooltip value. The chip
-   normally clips its image (overflow:hidden); on desktop we open it so the
-   bubble can escape upward and re-round the image to keep the corners clean. */
-@media (min-width: 901px) {
-  .hero-links .project-icon-chip { position: relative; overflow: visible; }
-  .hero-links .project-icon-chip img { border-radius: inherit; }
-
-  /* The tooltip is a real element so its text is the bubble's own content and
-     therefore paints ABOVE everything inside it. The transform makes it a
-     stacking context, which is what lets the arrow use z-index:-1 below. */
-  .hero-links .proj-tip {
-    position: absolute;
-    left: 50%;
-    bottom: calc(100% + 11px);
-    padding: 6px 10px;
-    border-radius: 8px;
-    background: var(--bg-card);
-    color: var(--text);
-    border: 1px solid var(--border-strong);
-    box-shadow: var(--shadow-card);
-    font-size: 12px;
-    font-weight: 600;
-    line-height: 1;
-    white-space: nowrap;
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    transform: translateX(-50%) translateY(4px);
-    transition: opacity 0.14s ease, transform 0.14s ease;
-    z-index: 5;
-  }
-  /* Arrow: z-index:-1 puts it above the bubble's own fill+border (hiding the
-     bottom-border seam) but below the bubble's text — so the text layers on
-     top of the arrow and can never be clipped, no matter how far it tucks in. */
-  .hero-links .proj-tip::after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    bottom: -6px;
-    width: 13px;
-    height: 13px;
-    background: var(--bg-card);
-    border-right: 1px solid var(--border-strong);
-    border-bottom: 1px solid var(--border-strong);
-    transform: translateX(-50%) rotate(45deg);
-    z-index: -1;
-  }
-  .hero-links .project-icon-chip:hover .proj-tip {
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(-50%) translateY(0);
-  }
-}
+.quest-chip:hover .quest-chip-icon { transform: translateY(-2px); box-shadow: var(--shadow-card); }
+.quest-chip-icon img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.quest-chip-name { font-size: 12px; font-weight: 600; color: var(--text); white-space: nowrap; line-height: 1.1; }
 
 .hero-photo {
   aspect-ratio: 1 / 1.08;
@@ -851,7 +821,7 @@ p { margin: 0; }
 }
 .hit-card-head { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
 .hit-card .hit-icon { font-size: 19px; line-height: 1; }
-.hit-card h4 { font-size: 14px; }
+.hit-card h3 { font-size: 14px; font-weight: 700; }
 .hit-card p { font-size: 12.5px; color: var(--text-muted); line-height: 1.45; }
 
 @media (max-width: 640px) {
@@ -909,25 +879,66 @@ p { margin: 0; }
 }
 .carousel-dots {
   position: absolute;
-  bottom: 14px;
+  bottom: 10px;
   left: 0;
   right: 0;
   display: flex;
   justify-content: center;
-  gap: 7px;
+  gap: 0;
   z-index: 2;
 }
+/* Real buttons: 24px hit area (WCAG 2.5.8) around a small visual dot */
 .carousel-dot {
-  width: 6px;
-  height: 6px;
+  appearance: none;
+  -webkit-appearance: none;
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  width: 24px;
+  height: 24px;
+  flex: 0 0 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.carousel-dot::before {
+  content: "";
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.55);
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.35);
   transition: background 0.3s ease, transform 0.3s ease;
 }
-.carousel-dot.is-active {
+.carousel-dot.is-active::before {
   background: #fff;
-  transform: scale(1.35);
+  transform: scale(1.4);
 }
+/* Autoplay pause / play toggle */
+.carousel-pause {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 3;
+  width: 34px;
+  height: 34px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(20, 16, 12, 0.55);
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.carousel-pause:hover { background: rgba(20, 16, 12, 0.78); }
+.carousel-pause svg { width: 15px; height: 15px; display: block; }
+.carousel-pause .icon-play { display: none; }
+.carousel-pause.is-paused .icon-pause { display: none; }
+.carousel-pause.is-paused .icon-play { display: block; }
 .story-text h3 { font-size: 24px; margin-bottom: 16px; }
 .story-text p { color: var(--text-muted); font-size: 15.5px; margin-bottom: 14px; }
 .story-text p:last-child { margin-bottom: 0; }
@@ -986,7 +997,7 @@ p { margin: 0; }
 .walkthrough-stage:first-child { border-top: none; }
 .walkthrough-head { max-width: 620px; margin-bottom: 30px; }
 .walkthrough-head .wt-num {
-  font-size: 12.5px; font-weight: 800; color: var(--accent); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px; display: block;
+  font-size: 12.5px; font-weight: 800; color: var(--accent-dark); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px; display: block;
 }
 .walkthrough-head h3 { font-size: 24px; margin-bottom: 8px; }
 .walkthrough-head p { color: var(--text-muted); font-size: 15px; }
@@ -1072,10 +1083,31 @@ p { margin: 0; }
   text-align: center;
   gap: 8px;
 }
-.footer-links { display: flex; justify-content: center; gap: 16px; }
-.footer-links a { font-weight: 600; font-size: 13px; color: var(--text-muted); }
+.footer-links { display: flex; justify-content: center; gap: 8px; }
+.footer-links a { font-weight: 600; font-size: 13px; color: var(--text-muted); display: inline-flex; align-items: center; min-height: 44px; padding: 0 8px; }
 .footer-links a:hover { color: var(--accent-dark); }
 .footer-copyright { font-size: 12px; color: var(--text-faint); margin-top: 2px; }
+
+/* ---------- Closing contact band ---------- */
+.contact-cta {
+  background: var(--accent-soft);
+  border-top: 1px solid var(--accent-soft-border);
+  text-align: center;
+}
+.contact-cta .section-title { max-width: 620px; margin: 0 auto 12px; }
+.contact-cta .section-desc { max-width: 560px; margin: 0 auto 26px; color: var(--text-muted); }
+.contact-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.contact-alt { margin-top: 20px; display: flex; gap: 6px; justify-content: center; flex-wrap: wrap; }
+.contact-alt a {
+  color: var(--text-muted);
+  font-weight: 600;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 10px;
+}
+.contact-alt a:hover { color: var(--accent-dark); }
 
 /* ---------- Utility ---------- */
 .mt-8 { margin-top: 8px; }
@@ -1119,7 +1151,7 @@ p { margin: 0; }
   .hero-links .logo-icon-chip { padding: 4px 10px 4px 4px; gap: 6px; }
   .hero-links .logo-icon-chip .icon-tile { border-radius: 6px; }
   .hero-links .logo-icon-chip .company-name { font-size: 12px; }
-  .hero-links .project-icon-chip { border-radius: 10px; }
+  .hero-links .quest-chip-icon { border-radius: 10px; }
 }
 
 /* Home hero on narrow phones: stop cramming label + logos + CTA onto one
@@ -1151,7 +1183,7 @@ p { margin: 0; }
   .hero-links .logo-icon-chip { padding: 6px 14px 6px 6px; gap: 10px; }
   .hero-links .logo-icon-chip .icon-tile { border-radius: 7px; }
   .hero-links .logo-icon-chip .company-name { font-size: 13px; }
-  .hero-links .project-icon-chip { border-radius: 12px; }
+  .hero-links .quest-chip-icon { border-radius: 12px; }
 }
 
 /* ---------- Travel story article (full-length story pages) ---------- */

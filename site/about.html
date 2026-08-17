@@ -66,42 +66,42 @@
       <div class="hit-card">
         <div class="hit-card-head">
           <span class="hit-icon">🏎️</span>
-          <h4>Formula 1</h4>
+          <h3>Formula 1</h3>
         </div>
         <p>I follow the sport closely — race weekends are non-negotiable.</p>
       </div>
       <div class="hit-card">
         <div class="hit-card-head">
           <span class="hit-icon">🏁</span>
-          <h4>Go-karting</h4>
+          <h3>Go-karting</h3>
         </div>
         <p>I go-kart in every country I visit — 4 countries and counting: Malaysia, Singapore, Dubai, US.</p>
       </div>
       <div class="hit-card">
         <div class="hit-card-head">
           <span class="hit-icon">🏏</span>
-          <h4>Cricket &amp; Frisbee</h4>
+          <h3>Cricket &amp; Frisbee</h3>
         </div>
         <p>When I get the time — one on the field, one on the disc.</p>
       </div>
       <div class="hit-card">
         <div class="hit-card-head">
           <span class="hit-icon">🎮</span>
-          <h4>RDR2</h4>
+          <h3>RDR2</h3>
         </div>
         <p>My favorite video game, hands down.</p>
       </div>
       <div class="hit-card">
         <div class="hit-card-head">
           <span class="hit-icon">📚</span>
-          <h4>Reading</h4>
+          <h3>Reading</h3>
         </div>
         <p>A habit I've recently picked up — still building the shelf.</p>
       </div>
       <div class="hit-card">
         <div class="hit-card-head">
           <span class="hit-icon">🎨</span>
-          <h4>Arts &amp; Crafts</h4>
+          <h3>Arts &amp; Crafts</h3>
         </div>
         <p>Currently working on a paint-by-numbers project.</p>
       </div>
@@ -118,29 +118,33 @@
     </div>
     <div class="story-block">
       <div class="story-photo">
-        <div class="photo-carousel">
+        <div class="photo-carousel" aria-roledescription="carousel" aria-label="Photos from the road">
           <div class="carousel-track">
-            <img src="assets/img/story/story-1.jpg" alt="" class="carousel-slide" width="810" height="1080" loading="lazy" decoding="async">
-            <img src="assets/img/story/story-2.jpg" alt="" class="carousel-slide" width="810" height="1080" loading="lazy" decoding="async">
-            <img src="assets/img/story/story-3.jpg" alt="" class="carousel-slide" width="810" height="1080" loading="lazy" decoding="async">
-            <img src="assets/img/story/story-4.jpg" alt="" class="carousel-slide" width="810" height="1080" loading="lazy" decoding="async">
-            <img src="assets/img/story/story-5.jpg" alt="" class="carousel-slide" width="1080" height="810" loading="lazy" decoding="async">
-            <img src="assets/img/story/story-6.jpg" alt="" class="carousel-slide" width="1080" height="810" loading="lazy" decoding="async">
-            <img src="assets/img/story/story-7.jpg" alt="" class="carousel-slide" width="810" height="1080" loading="lazy" decoding="async">
-            <img src="assets/img/story/story-8.jpg" alt="" class="carousel-slide" width="810" height="1080" loading="lazy" decoding="async">
-            <img src="assets/img/story/story-9.jpg" alt="" class="carousel-slide" width="810" height="1080" loading="lazy" decoding="async">
+            <img src="assets/img/story/story-1.jpg" alt="Sitting on a rocky ledge watching the sun set over layered hills" class="carousel-slide" width="810" height="1080" loading="lazy" decoding="async">
+            <img src="assets/img/story/story-2.jpg" alt="A tree-lined Upper East Side avenue in New York, yellow cabs beneath a One Way sign" class="carousel-slide" width="810" height="1080" loading="lazy" decoding="async">
+            <img src="assets/img/story/story-3.jpg" alt="The Statue of Liberty seen from the water on a clear day" class="carousel-slide" width="810" height="1080" loading="lazy" decoding="async">
+            <img src="assets/img/story/story-4.jpg" alt="The ornate arched stone entrance of a historic New York building" class="carousel-slide" width="810" height="1080" loading="lazy" decoding="async">
+            <img src="assets/img/story/story-5.jpg" alt="Half Dome rising over the Merced River and meadows in Yosemite Valley" class="carousel-slide" width="1080" height="810" loading="lazy" decoding="async">
+            <img src="assets/img/story/story-6.jpg" alt="Hundreds of love-lock padlocks clipped to a bridge railing" class="carousel-slide" width="1080" height="810" loading="lazy" decoding="async">
+            <img src="assets/img/story/story-7.jpg" alt="A cable car descending a steep San Francisco street lined with parked cars" class="carousel-slide" width="810" height="1080" loading="lazy" decoding="async">
+            <img src="assets/img/story/story-8.jpg" alt="The Golden Gate Bridge glowing at dusk through light fog" class="carousel-slide" width="810" height="1080" loading="lazy" decoding="async">
+            <img src="assets/img/story/story-9.jpg" alt="Red lanterns strung across a San Francisco Chinatown street" class="carousel-slide" width="810" height="1080" loading="lazy" decoding="async">
           </div>
         </div>
-        <div class="carousel-dots">
-          <span class="carousel-dot is-active"></span>
-          <span class="carousel-dot"></span>
-          <span class="carousel-dot"></span>
-          <span class="carousel-dot"></span>
-          <span class="carousel-dot"></span>
-          <span class="carousel-dot"></span>
-          <span class="carousel-dot"></span>
-          <span class="carousel-dot"></span>
-          <span class="carousel-dot"></span>
+        <button class="carousel-pause" type="button" aria-label="Pause the photo slideshow" aria-pressed="false">
+          <svg class="icon-pause" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="6" y="5" width="4" height="14" rx="1" fill="currentColor"/><rect x="14" y="5" width="4" height="14" rx="1" fill="currentColor"/></svg>
+          <svg class="icon-play" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 5l11 7-11 7z" fill="currentColor"/></svg>
+        </button>
+        <div class="carousel-dots" role="group" aria-label="Choose a photo">
+          <button type="button" class="carousel-dot is-active" aria-label="Show photo 1 of 9" aria-current="true"></button>
+          <button type="button" class="carousel-dot" aria-label="Show photo 2 of 9"></button>
+          <button type="button" class="carousel-dot" aria-label="Show photo 3 of 9"></button>
+          <button type="button" class="carousel-dot" aria-label="Show photo 4 of 9"></button>
+          <button type="button" class="carousel-dot" aria-label="Show photo 5 of 9"></button>
+          <button type="button" class="carousel-dot" aria-label="Show photo 6 of 9"></button>
+          <button type="button" class="carousel-dot" aria-label="Show photo 7 of 9"></button>
+          <button type="button" class="carousel-dot" aria-label="Show photo 8 of 9"></button>
+          <button type="button" class="carousel-dot" aria-label="Show photo 9 of 9"></button>
         </div>
       </div>
       <div class="story-text">
@@ -152,12 +156,30 @@
   </div>
 </section>
 
+<!-- ============ CLOSING CONTACT ============ -->
+<section class="section contact-cta">
+  <div class="container">
+    <span class="section-eyebrow">Get in touch</span>
+    <h2 class="section-title">Let's build something measurable.</h2>
+    <p class="section-desc">I'm open to Senior PM roles and hard 0→1 problems. Email is the fastest way to reach me — or take my résumé with you.</p>
+    <div class="contact-actions">
+      <a href="mailto:anirudh.kasugunti@gmail.com" class="btn btn-primary">Email me →</a>
+      <a href="assets/docs/Anirudh_Kasugunti_Resume.pdf" class="btn btn-secondary" download>Download résumé</a>
+    </div>
+    <div class="contact-alt">
+      <a href="https://www.linkedin.com/in/anirudh-kasugunti-9b7a97155/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://wa.me/919030330744" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </div>
+</section>
+
 <footer class="site-footer">
   <div class="container footer-row">
     <div class="footer-links">
       <a href="https://www.linkedin.com/in/anirudh-kasugunti-9b7a97155/" target="_blank" rel="noopener">LinkedIn</a>
       <a href="https://wa.me/919030330744" target="_blank" rel="noopener">WhatsApp</a>
       <a href="mailto:anirudh.kasugunti@gmail.com">Email</a>
+      <a href="assets/docs/Anirudh_Kasugunti_Resume.pdf" target="_blank" rel="noopener">Résumé</a>
     </div>
     <div class="footer-copyright">Bengaluru, India &middot; &copy; 2026 Anirudh Kasugunti</div>
   </div>
